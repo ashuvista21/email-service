@@ -23,6 +23,11 @@ public class GlobalExceptionHandler {
     			.map(DefaultMessageSourceResolvable::getDefaultMessage)
     			.toList(), HttpStatus.BAD_REQUEST) ;
     }
+    
+    @ExceptionHandler(EmailException.class)
+    public ResponseEntity<ApiResponse<Void>> handleEmailServiceException(EmailException ex) {
+        return buildResponse(ex.getMessage(), ex.getStatus()) ;
+    }
 
     // Handle mail sending errors (SMTP issues, etc.)
     @ExceptionHandler(MailException.class)

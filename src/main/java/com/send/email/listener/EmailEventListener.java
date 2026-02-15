@@ -6,7 +6,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 import com.send.email.dtos.EmailEvent;
-import com.send.email.service.EmailService;
+import com.send.email.service.impl.EmailService;
 
 import lombok.RequiredArgsConstructor;
 

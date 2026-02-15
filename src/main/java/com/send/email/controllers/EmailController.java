@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.send.email.dtos.ApiResponse;
 import com.send.email.dtos.EmailRequest;
-import com.send.email.service.EmailService;
+import com.send.email.service.impl.EmailService;
 
 import jakarta.validation.Valid;
 

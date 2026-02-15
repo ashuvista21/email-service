@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Suspicious Login Activity Detected</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family: Arial, sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:30px 0;">
+    <tr>
+        <td align="center">
+
+            <table width="600" cellpadding="0" cellspacing="0"
+                   style="background:#ffffff; border-radius:8px; padding:30px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+
+                <!-- Header -->
+                <tr>
+                    <td align="center" style="padding-bottom:20px;">
+                        <h2 style="margin:0; color:#c0392b;">
+                            ⚠ Suspicious Login Activity Detected
+                        </h2>
+                    </td>
+                </tr>
+
+                <!-- Body -->
+                <tr>
+                    <td style="color:#333; font-size:15px; line-height:22px;">
+                        <p>
+                            Hi <strong th:text="${name}">User</strong>,
+                        </p>
+
+                        <p>
+                            We detected a login attempt to your account with the following details:
+                        </p>
+
+                        <table width="100%" cellpadding="6" cellspacing="0"
+                               style="background:#f8f9fa; border-radius:6px; margin:15px 0; font-size:14px;">
+                            <tr>
+                                <td><strong>Time:</strong></td>
+                                <td th:text="${loginTime}">15 Feb 2026, 10:32 PM IST</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Location:</strong></td>
+                                <td th:text="${location}">Bengaluru, India</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IP Address:</strong></td>
+                                <td th:text="${ipAddress}">192.168.1.10</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Device:</strong></td>
+                                <td th:text="${deviceInfo}">Chrome on Windows</td>
+                            </tr>
+                        </table>
+
+                        <p>
+                            If this was you, no further action is required.
+                        </p>
+
+                        <p style="color:#c0392b; font-weight:bold;">
+                            If you do NOT recognize this activity, please secure your account immediately.
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Secure Account Button -->
+                <tr>
+                    <td align="center" style="padding:25px 0;">
+                        <a th:href="${secureAccountUrl}"
+                           style="background-color:#c0392b;
+                                  color:#ffffff;
+                                  padding:12px 25px;
+                                  text-decoration:none;
+                                  border-radius:5px;
+                                  font-size:14px;
+                                  font-weight:bold;
+                                  display:inline-block;">
+                            Secure My Account
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- Support -->
+                <tr>
+                    <td style="font-size:14px; color:#555;">
+                        <p>
+                            For assistance, contact us at
+                            <a th:href="'mailto:' + ${supportEmail}"
+                               th:text="${supportEmail}"
+                               style="color:#c0392b; text-decoration:none;">
+                                support@example.com
+                            </a>.
+                        </p>
+
+                        <p style="margin-top:30px;">
+                            Stay secure,<br/>
+                            <strong>Your Security Team</strong>
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+
+            <!-- Footer -->
+            <table width="600" cellpadding="0" cellspacing="0" style="margin-top:15px;">
+                <tr>
+                    <td align="center" style="font-size:12px; color:#999;">
+                        © 2026 Your Company. All rights reserved.
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
